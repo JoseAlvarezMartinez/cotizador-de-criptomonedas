@@ -25,18 +25,18 @@ const Precio = styled.p`
     }
 `
 
-const Resultado = ({informacion}) => {
-    const {PRICE,HIGHDAY,LOWDAY,CHANGEPCT24HOUR,IMAGEURL,LASTUPDATE} = informacion
+const Resultado = ({datosCriptomoneda}) => {
+    const {PRICE,HIGHDAY,LOWDAY,CHANGEPCT24HOUR,IMAGEURL,LASTUPDATE} = datosCriptomoneda
   return (
     
         <Contenedor>
         <Imagen src={`https://cryptocompare.com/${IMAGEURL}`}  alt="" />
         <div>
-        <Precio>El precio es de: $<span>{PRICE}</span></Precio>
-        <Texto>El precio mas alto del dia: $<span>{HIGHDAY}</span></Texto>
-        <Texto>El precio mas bajo del dia: $<span>{LOWDAY}</span></Texto>
-        <Texto>Variacion ultimas 24 horas: $<span>{CHANGEPCT24HOUR}</span></Texto>
-        <Texto>Ultima actualizacion: $<span>{LASTUPDATE}</span></Texto>
+        <Precio>El precio es de: <span>{PRICE}</span></Precio>
+        <Texto>El precio mas alto del dia: <span>{HIGHDAY}</span></Texto>
+        <Texto>El precio mas bajo del dia: <span>{LOWDAY}</span></Texto>
+        <Texto>Variacion ultimas 24 horas: <span>{CHANGEPCT24HOUR}</span></Texto>
+        <Texto>Ultima actualizacion: <span>{LASTUPDATE}</span></Texto>
         </div>
         </Contenedor>
     

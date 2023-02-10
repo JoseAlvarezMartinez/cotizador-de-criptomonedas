@@ -13,27 +13,23 @@ const Select = styled.select`
   font-size: 18px;
   padding: 14px;
   border-radius: 10px;
-  margin-bottom:20px;
-`
-const useSelectMonedas = (label, opciones) => {
+  margin-bottom: 20px;
+`;
+const useSelectMonedas = (label,monedas) => {
   const [state,setState] = useState("")
-  const SelectMonedas = () => (
+  const SelectMoneda = () => (
     <>
       <Label>{label}</Label>
-      <Select
-      onChange={e => setState(e.target.value)}
-      value={state}
-      >
-        <option value="">Seleccione</option>
-        {opciones.map((opcion) => (
-          <option value={opcion.id} key={opcion.id}>
-            {opcion.nombre}
-          </option>
+      <Select onChange={e => setState(e.target.value)} value={state} >
+        <option value="">Seleccionar</option>
+      {monedas.map(moneda => (
+        <option value={moneda.id} key={moneda.id}>{moneda.nombre}</option>
         ))}
       </Select>
+      
     </>
-  );
-  return [state,SelectMonedas];
+  )
+  return [SelectMoneda,state]
 };
 
 export default useSelectMonedas;
