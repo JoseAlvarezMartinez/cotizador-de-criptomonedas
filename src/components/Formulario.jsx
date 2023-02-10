@@ -34,7 +34,7 @@ const Formulario = () => {
     monedas
   );
   const [CriptoMoneda, criptoMonedaSeleccionada] = useSelectMonedas(
-    "Seleccione su Moneda",
+    "Seleccione su Criptomoneda",
     monedasTop
   );
   const [informacionSolicitada, setInformacionSolicitada] = useState([]);
